@@ -1,0 +1,44 @@
+﻿<Window x:Class="PR1.Windows.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR1.Windows"
+        mc:Ignorable="d"
+        Title="Регистрация"
+        Height="760" Width="460"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanMinimize">
+    <Grid Margin="40,24,40,20">
+        <StackPanel>
+            <TextBlock Text="Регистрация" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,16" />
+
+            <TextBlock Text="ФИО" Margin="0,0,0,4" />
+            <TextBox x:Name="tbFullName" />
+
+            <TextBlock Text="Логин" Margin="0,0,0,4" />
+            <TextBox x:Name="tbLogin" />
+
+            <TextBlock Text="Пароль" Margin="0,0,0,4" />
+            <PasswordBox x:Name="tbPassword" />
+
+            <TextBlock Text="Телефон" Margin="0,0,0,4" />
+            <TextBox x:Name="tbPhone" />
+            <TextBlock Text="+7 XXX XXX-XX-XX" Foreground="#7A726B" FontSize="12" Margin="0,-6,0,10" />
+
+            <TextBlock Text="Адрес" Margin="0,0,0,4" />
+            <TextBox x:Name="tbAddress" />
+            <TextBlock Text="ул. Ленина, д. 5, кв. 12" Foreground="#7A726B" FontSize="12" Margin="0,-6,0,10" />
+
+            <CheckBox x:Name="cbNoApartment" Content="Нет квартиры (частный дом)"
+                      Margin="0,0,0,10" />
+
+            <TextBlock x:Name="lblError" Foreground="#B3261E"
+                       Visibility="Collapsed" Margin="0,0,0,10" />
+
+            <Button Content="Зарегистрироваться" Height="40" IsDefault="True"
+                    Margin="0,4,0,8" x:Name="btnRegister" Click="btnRegister_Click" />
+            <Button Content="Отмена" IsCancel="True" x:Name="btnCancel" Click="btnCancel_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
