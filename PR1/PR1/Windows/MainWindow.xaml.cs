@@ -16,7 +16,7 @@ public partial class MainWindow : Window
         InitializeComponent();
         lblUser.Text = $"Вы вошли как {App.CurrentUser?.FullName}";
         LoadBouquets();
-        UpdatebtnCart();
+        UpdateCartButton();
     }
 
     private void LoadBouquets()
@@ -52,7 +52,6 @@ public partial class MainWindow : Window
 
     private void lstBouquets_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-        // щелчок по пустому месту не должен добавлять прошлый выбранный букет
         if (ItemsControl.ContainerFromElement(lstBouquets, (DependencyObject)e.OriginalSource) == null)
             return;
 
@@ -72,10 +71,10 @@ public partial class MainWindow : Window
         }
 
         db.SaveChanges();
-        UpdatebtnCart();
+        UpdateCartButton();
     }
 
-    private void UpdatebtnCart()
+    private void UpdateCartButton()
     {
         using var db = new AppDbContext();
         int userId = App.CurrentUser!.Id;
@@ -87,7 +86,7 @@ public partial class MainWindow : Window
     {
         var cart = new CartWindow { Owner = this };
         cart.ShowDialog();
-        UpdatebtnCart();   // вернулись из корзины — обновить счётчик
+        UpdateCartButton();
     }
 
     private void btnLogout_Click(object sender, RoutedEventArgs e)

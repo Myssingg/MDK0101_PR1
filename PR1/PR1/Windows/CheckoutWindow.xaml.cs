@@ -101,8 +101,6 @@ public partial class CheckoutWindow : Window
             MessageBox.Show("Корзина пуста.");
             return;
         }
-
-        // Отредактированные контакты сохраняем в профиль
         var profile = db.Users.First(u => u.Id == user.Id);
         profile.FullName = fullName;
         profile.Phone = phone;

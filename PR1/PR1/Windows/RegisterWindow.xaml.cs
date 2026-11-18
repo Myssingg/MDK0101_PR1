@@ -7,11 +7,8 @@ namespace PR1.Windows;
 
 public partial class RegisterWindow : Window
 {
-    // Маска телефона из задания
     private static readonly Regex PhoneRegex =
         new(@"^\+7 \d{3} \d{3}-\d{2}-\d{2}$");
-
-    // "ул. Ленина, д. 5, кв. 12"; группа с кв. необязательна
     private static readonly Regex AddressRegex =
         new(@"^ул\.\s+(.+?),\s*д\.\s*(\d+[А-Яа-яA-Za-z]?)(?:,\s*кв\.\s*(\d+))?$");
 
